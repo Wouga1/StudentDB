@@ -47,11 +47,18 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        'gender validation
-        'ASCII for F=70, M=77, f=102, m=109
         If txtGender.Text <> "f" And txtGender.Text <> "m" Then
             MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
             txtGender.Focus()
+            Exit Sub
+        End If
+        If Not IsNumeric(txtAvMk.Text) Then
+            MsgBox("Please enter a number", MsgBoxStyle.Exclamation, "Problem with Average Mark")
+            txtAvMk.Focus()
+            Exit Sub
+        ElseIf txtAvMk.Text < 0 Or txtAvMk.Text > 100 Then
+            MsgBox("Please enter a number between 0 and 100", MsgBoxStyle.Exclamation, "Problem with Average Mark")
+            txtAvMk.Focus()
             Exit Sub
         End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
