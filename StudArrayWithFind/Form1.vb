@@ -47,20 +47,6 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        If txtGender.Text <> "f" And txtGender.Text <> "m" Then
-            MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
-            txtGender.Focus()
-            Exit Sub
-        End If
-        If Not IsNumeric(txtAvMk.Text) Then
-            MsgBox("Please enter a number", MsgBoxStyle.Exclamation, "Problem with Average Mark")
-            txtAvMk.Focus()
-            Exit Sub
-        ElseIf txtAvMk.Text < 0 Or txtAvMk.Text > 100 Then
-            MsgBox("Please enter a number between 0 and 100", MsgBoxStyle.Exclamation, "Problem with Average Mark")
-            txtAvMk.Focus()
-            Exit Sub
-        End If
         If txtFirstName.Text = "" Then
             MsgBox("Please enter a first name", MsgBoxStyle.Exclamation, "Problem with First Name")
             txtFirstName.Focus()
@@ -71,9 +57,32 @@
             txtLastName.Focus()
             Exit Sub
         End If
+
         If Not IsDate(txtDOB.Text) Then
             MsgBox("Please enter a date in the form DD/MM/YYYY", MsgBoxStyle.Exclamation, "Problem with Date of Birth")
             txtDOB.Focus()
+            Exit Sub
+        End If
+
+        If txtGender.Text <> "f" And txtGender.Text <> "m" Then
+            MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
+            txtGender.Focus()
+            Exit Sub
+        End If
+
+        If Not IsNumeric(txtAvMk.Text) Then
+            MsgBox("Please enter a number", MsgBoxStyle.Exclamation, "Problem with Average Mark")
+            txtAvMk.Focus()
+            Exit Sub
+        ElseIf txtAvMk.Text < 0 Or txtAvMk.Text > 100 Then
+            MsgBox("Please enter a number between 0 and 100", MsgBoxStyle.Exclamation, "Problem with Average Mark")
+            txtAvMk.Focus()
+            Exit Sub
+        End If
+
+        If Not Len(Trim(txtPhone.Text)) = 12 Then
+            MsgBox("Please enter a 10 digit phone number", MsgBoxStyle.Exclamation, "Problem with Phone Number")
+            txtPhone.Focus()
             Exit Sub
         End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
@@ -91,6 +100,7 @@
         txtDOB.Text = ""
         txtGender.Text = ""
         txtAvMk.Text = ""
+        txtPhone.Text = ""
         displayList()
     End Sub
     Private Sub displayList()
