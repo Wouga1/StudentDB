@@ -61,6 +61,21 @@
             txtAvMk.Focus()
             Exit Sub
         End If
+        If txtFirstName.Text = "" Then
+            MsgBox("Please enter a first name", MsgBoxStyle.Exclamation, "Problem with First Name")
+            txtFirstName.Focus()
+            Exit Sub
+        End If
+        If txtLastName.Text = "" Then
+            MsgBox("Please enter a last name", MsgBoxStyle.Exclamation, "Problem with Last Name")
+            txtLastName.Focus()
+            Exit Sub
+        End If
+        If Not IsDate(txtDOB.Text) Then
+            MsgBox("Please enter a date in the form DD/MM/YYYY", MsgBoxStyle.Exclamation, "Problem with Date of Birth")
+            txtDOB.Focus()
+            Exit Sub
+        End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
