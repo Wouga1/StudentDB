@@ -40,6 +40,10 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
         Me.btnFindStud = New System.Windows.Forms.Button()
+        Me.txtSelectedItem = New System.Windows.Forms.TextBox()
+        Me.txtSelectedIndex = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -148,7 +152,7 @@ Partial Class Form1
         '
         Me.lstStud.FormattingEnabled = True
         Me.lstStud.ItemHeight = 16
-        Me.lstStud.Location = New System.Drawing.Point(48, 249)
+        Me.lstStud.Location = New System.Drawing.Point(48, 272)
         Me.lstStud.Margin = New System.Windows.Forms.Padding(4)
         Me.lstStud.Name = "lstStud"
         Me.lstStud.Size = New System.Drawing.Size(709, 196)
@@ -158,7 +162,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(52, 225)
+        Me.Label8.Location = New System.Drawing.Point(48, 251)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(234, 17)
@@ -215,11 +219,51 @@ Partial Class Form1
         Me.btnFindStud.Text = "Find Student"
         Me.btnFindStud.UseVisualStyleBackColor = True
         '
+        'txtSelectedItem
+        '
+        Me.txtSelectedItem.Location = New System.Drawing.Point(48, 207)
+        Me.txtSelectedItem.Name = "txtSelectedItem"
+        Me.txtSelectedItem.ReadOnly = True
+        Me.txtSelectedItem.Size = New System.Drawing.Size(377, 22)
+        Me.txtSelectedItem.TabIndex = 22
+        Me.txtSelectedItem.TabStop = False
+        '
+        'txtSelectedIndex
+        '
+        Me.txtSelectedIndex.Location = New System.Drawing.Point(441, 207)
+        Me.txtSelectedIndex.Name = "txtSelectedIndex"
+        Me.txtSelectedIndex.ReadOnly = True
+        Me.txtSelectedIndex.Size = New System.Drawing.Size(70, 22)
+        Me.txtSelectedIndex.TabIndex = 23
+        Me.txtSelectedIndex.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(48, 189)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(116, 17)
+        Me.Label9.TabIndex = 24
+        Me.Label9.Text = "Selected Student"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(438, 189)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(41, 17)
+        Me.Label10.TabIndex = 25
+        Me.Label10.Text = "Index"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(815, 481)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtSelectedIndex)
+        Me.Controls.Add(Me.txtSelectedItem)
         Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
@@ -266,4 +310,8 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
     Friend WithEvents btnFindStud As Button
+    Friend WithEvents txtSelectedItem As TextBox
+    Friend WithEvents txtSelectedIndex As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class

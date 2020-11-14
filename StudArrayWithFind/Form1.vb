@@ -9,12 +9,12 @@
         Public phoneNo As String
         Public paid As Boolean
     End Class
-    Dim students(9) As STUDENT
+    Dim students(20) As STUDENT
     Dim studentCount As Integer = 0
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'allocate memory
-        For i = 0 To 9
+        For i = 0 To 20
             students(i) = New STUDENT
         Next
         'load 4 test records
@@ -23,14 +23,14 @@
         students(0).DOB = "9/6/63"
         students(0).gender = "m"
         students(0).avMk = 78.2
-        students(0).phoneNo = 123456789
+        students(0).phoneNo = "0123456789"
         students(0).paid = False
         students(1).firstname = "Jennifer"
         students(1).lastname = "Lawrence"
         students(1).DOB = "15/8/90"
         students(1).gender = "f"
         students(1).avMk = 88.2
-        students(1).phoneNo = 987654321
+        students(1).phoneNo = "0987654321"
         students(1).paid = True
         students(2).firstname = "George"
         students(2).lastname = "Clooney"
@@ -42,8 +42,71 @@
         students(3).DOB = "22/11/84"
         students(3).gender = "f"
         students(3).avMk = 72.2
+        students(4).firstname = "Johnny"
+        students(4).lastname = "Deppy"
+        students(4).DOB = "9/6/68"
+        students(4).gender = "m"
+        students(4).avMk = 78.2
+        students(4).phoneNo = "0123456789"
+        students(4).paid = False
+        students(5).firstname = "Fred"
+        students(5).lastname = "Bear"
+        students(5).DOB = "9/4/63"
+        students(5).gender = "m"
+        students(5).avMk = 78.2
+        students(5).phoneNo = "0123456789"
+        students(5).paid = False
+        students(6).firstname = "Mickey"
+        students(6).lastname = "Mouse"
+        students(6).DOB = "28/12/98"
+        students(6).gender = "m"
+        students(6).avMk = 78.2
+        students(6).phoneNo = "0123456789"
+        students(6).paid = False
+        students(7).firstname = "Fred"
+        students(7).lastname = "Flintstone"
+        students(7).DOB = "4/11/03"
+        students(7).gender = "m"
+        students(7).avMk = 78.2
+        students(7).phoneNo = "0123456789"
+        students(7).paid = False
+        students(8).firstname = "Minnie"
+        students(8).lastname = "Mouse"
+        students(8).DOB = "9/6/63"
+        students(8).gender = "f"
+        students(8).avMk = 78.2
+        students(8).phoneNo = "0123455555"
+        students(8).paid = True
+        students(9).firstname = "Boo"
+        students(9).lastname = "Depp"
+        students(9).DOB = "9/6/01"
+        students(9).gender = "m"
+        students(9).avMk = 99
+        students(9).phoneNo = "0123456789"
+        students(9).paid = False
+        students(10).firstname = "Lori Anne"
+        students(10).lastname = "Allison"
+        students(10).DOB = "9/6/63"
+        students(10).gender = "f"
+        students(10).avMk = 66
+        students(10).phoneNo = "0123456789"
+        students(10).paid = False
+        students(11).firstname = "Amber"
+        students(11).lastname = "Heard"
+        students(11).DOB = "28/2/00"
+        students(11).gender = "f"
+        students(11).avMk = 77
+        students(11).phoneNo = "0123456789"
+        students(11).paid = False
+        students(12).firstname = "Pistol"
+        students(12).lastname = "Depp"
+        students(12).DOB = "9/6/98"
+        students(12).gender = "m"
+        students(12).avMk = 3
+        students(12).phoneNo = "0123456789"
+        students(12).paid = False
         'set the student count to the number of students which have been entered
-        studentCount = 4
+        studentCount = 13
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
@@ -106,6 +169,7 @@
             lstStud.Items.Add(students(i).firstname & " - " & students(i).lastname & " - " &
                               students(i).DOB & " - " & students(i).gender & " - " & students(i).avMk & "-" & students(i).phoneNo & "-" & students(i).paid & ".")
         Next
+        lstStud.SelectedIndex = studentCount - 1
     End Sub
 
     Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
@@ -119,14 +183,17 @@
         While searchCount < studentCount And foundName = False
             If students(searchCount).lastname = txtLastName.Text Then
                 foundName = True
+                lstStud.SelectedIndex = searchCount
             End If
             searchCount += 1
         End While
-        If foundName Then
-            lstStud.Items.Add("Your student is " & students(searchCount - 1).firstname & " - " & students(searchCount - 1).lastname & " - " &
-                              students(searchCount - 1).DOB & " - " & students(searchCount - 1).gender & " - " & students(searchCount - 1).avMk & "-" & students(searchCount - 1).phoneNo & "-" & students(searchCount - 1).paid & ".")
-        Else
-            lstStud.Items.Add("This student could not be found!")
+        If Not foundName Then
+            txtSelectedItem.Text = "This student could not be found!"
         End If
+    End Sub
+
+    Private Sub lstStud_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStud.SelectedIndexChanged
+        txtSelectedItem.Text = lstStud.SelectedItem
+        txtSelectedIndex.Text = lstStud.SelectedIndex
     End Sub
 End Class
