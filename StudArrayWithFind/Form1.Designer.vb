@@ -39,12 +39,13 @@ Partial Class Form1
         Me.chkPaid = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
+        Me.btnFindStud = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtFirstName
         '
         Me.txtFirstName.Location = New System.Drawing.Point(48, 102)
-        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(132, 22)
         Me.txtFirstName.TabIndex = 0
@@ -82,7 +83,7 @@ Partial Class Form1
         'txtLastName
         '
         Me.txtLastName.Location = New System.Drawing.Point(189, 102)
-        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(132, 22)
         Me.txtLastName.TabIndex = 3
@@ -110,7 +111,7 @@ Partial Class Form1
         'txtGender
         '
         Me.txtGender.Location = New System.Drawing.Point(48, 159)
-        Me.txtGender.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtGender.Margin = New System.Windows.Forms.Padding(4)
         Me.txtGender.Name = "txtGender"
         Me.txtGender.Size = New System.Drawing.Size(132, 22)
         Me.txtGender.TabIndex = 7
@@ -128,7 +129,7 @@ Partial Class Form1
         'txtAvMk
         '
         Me.txtAvMk.Location = New System.Drawing.Point(189, 159)
-        Me.txtAvMk.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtAvMk.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAvMk.Name = "txtAvMk"
         Me.txtAvMk.Size = New System.Drawing.Size(132, 22)
         Me.txtAvMk.TabIndex = 9
@@ -136,7 +137,7 @@ Partial Class Form1
         'btnAddStud
         '
         Me.btnAddStud.Location = New System.Drawing.Point(537, 153)
-        Me.btnAddStud.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddStud.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(139, 28)
         Me.btnAddStud.TabIndex = 15
@@ -148,10 +149,10 @@ Partial Class Form1
         Me.lstStud.FormattingEnabled = True
         Me.lstStud.ItemHeight = 16
         Me.lstStud.Location = New System.Drawing.Point(48, 249)
-        Me.lstStud.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lstStud.Margin = New System.Windows.Forms.Padding(4)
         Me.lstStud.Name = "lstStud"
         Me.lstStud.Size = New System.Drawing.Size(709, 196)
-        Me.lstStud.TabIndex = 15
+        Me.lstStud.TabIndex = 21
         Me.lstStud.TabStop = False
         '
         'Label8
@@ -167,7 +168,7 @@ Partial Class Form1
         'txtPhone
         '
         Me.txtPhone.Location = New System.Drawing.Point(329, 159)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPhone.Mask = "0000-000-000"
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(132, 22)
@@ -177,7 +178,7 @@ Partial Class Form1
         '
         Me.chkPaid.AutoSize = True
         Me.chkPaid.Location = New System.Drawing.Point(470, 158)
-        Me.chkPaid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkPaid.Margin = New System.Windows.Forms.Padding(4)
         Me.chkPaid.Name = "chkPaid"
         Me.chkPaid.Size = New System.Drawing.Size(58, 21)
         Me.chkPaid.TabIndex = 13
@@ -204,11 +205,22 @@ Partial Class Form1
         Me.txtDOB.TabIndex = 6
         Me.txtDOB.Value = New Date(2003, 1, 1, 0, 0, 0, 0)
         '
+        'btnFindStud
+        '
+        Me.btnFindStud.Location = New System.Drawing.Point(537, 189)
+        Me.btnFindStud.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnFindStud.Name = "btnFindStud"
+        Me.btnFindStud.Size = New System.Drawing.Size(139, 28)
+        Me.btnFindStud.TabIndex = 18
+        Me.btnFindStud.Text = "Find Student"
+        Me.btnFindStud.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(815, 481)
+        Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.chkPaid)
@@ -226,7 +238,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Student Database"
         Me.ResumeLayout(False)
@@ -253,4 +265,5 @@ Partial Class Form1
     Friend WithEvents chkPaid As CheckBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
+    Friend WithEvents btnFindStud As Button
 End Class

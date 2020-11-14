@@ -107,4 +107,26 @@
                               students(i).DOB & " - " & students(i).gender & " - " & students(i).avMk & "-" & students(i).phoneNo & "-" & students(i).paid & ".")
         Next
     End Sub
+
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
+        If txtLastName.Text = "" Then
+            MsgBox("Please enter a last name", MsgBoxStyle.Exclamation, "Problem with Last Name")
+            txtLastName.Focus()
+            Exit Sub
+        End If
+        Dim foundName As Boolean
+        Dim searchCount As Integer
+        While searchCount < studentCount And foundName = False
+            If students(searchCount).lastname = txtLastName.Text Then
+                foundName = True
+            End If
+            searchCount += 1
+        End While
+        If foundName Then
+            lstStud.Items.Add("Your student is " & students(searchCount - 1).firstname & " - " & students(searchCount - 1).lastname & " - " &
+                              students(searchCount - 1).DOB & " - " & students(searchCount - 1).gender & " - " & students(searchCount - 1).avMk & "-" & students(searchCount - 1).phoneNo & "-" & students(searchCount - 1).paid & ".")
+        Else
+            lstStud.Items.Add("This student could not be found!")
+        End If
+    End Sub
 End Class
