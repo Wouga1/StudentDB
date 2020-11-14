@@ -58,12 +58,6 @@
             Exit Sub
         End If
 
-        If Not IsDate(txtDOB.Text) Then
-            MsgBox("Please enter a date in the form DD/MM/YYYY", MsgBoxStyle.Exclamation, "Problem with Date of Birth")
-            txtDOB.Focus()
-            Exit Sub
-        End If
-
         If txtGender.Text <> "f" And txtGender.Text <> "m" Then
             MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
             txtGender.Focus()
@@ -102,6 +96,7 @@
         txtAvMk.Text = ""
         txtPhone.Text = ""
         displayList()
+        txtFirstName.Focus()
     End Sub
     Private Sub displayList()
         'clear the list box as it keeps the earlier loop
